@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Femme de Valeur International - Contact</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo-fvi.png">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+         <a href="index.html" class="logo">
+    <div class="logo-image-wrapper">
+        <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+    </div>
+    <div class="logo-text">
+        <span class="logo-title">Femme de Valeur</span>
+        <span class="logo-subtitle">International</span>
+    </div>
+</a>
+                <button  aria-label="menu" class="menu-toggle" id="menuToggle">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="apropos.html" class="nav-link">À propos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle ">Activités <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                         <li><a href="activites.html" class="dropdown-link">Projets en cours</a></li>
+                            <li><a href="realisations.html" class="dropdown-link active">Réalisations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="membres.html" class="nav-link">Membres</a></li>
+                    <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" 
+    style="  background:    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  
+url('assets/images/contact.png') no-repeat ;
+           background-size: cover;
+           padding: 150px 0 150px;
+           color: white;
+           margin-top: 80px;">
+        <div class="container">
+            <h1 class="page-title">Contactez-nous</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a> / <span>Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Restons en contact</h2>
+                <p class="section-subtitle">Nous sommes là pour répondre à vos questions et vous accompagner dans votre démarche</p>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Notre Adresse</h3>
+                    <p>Commune de Cotonou, 2ème Arrondissement<br>
+                    Quartier Ayélawadjè 1 (Akpakpa)<br>
+                    Carré N° 221, Bénin</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Téléphone</h3>
+                    <p>+229 01 96 19 06 81<br>
+                    <span class="info-note">Lun-Ven : 9h - 17h</span></p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>associationfvi@gmail.com<br>
+                    <span class="info-note">Réponse sous 24-48h</span></p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Permanence</h3>
+                    <p>Réunion mensuelle :<br>
+                    Chaque 2e mercredi du mois<br>
+                    <span class="info-note">10h - 12h</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Formulaire de contact -->
+                <div class="form-container">
+                    <h2 class="form-title">Envoyez-nous un message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nom  <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Prénom(s) <span class="required">*</span></label>
+                                <input type="text" id="name" name="surname" placeholder="votre.email@exemple.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+229 XX XX XX XX">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Sujet <span class="required">*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Choisissez un sujet</option>
+                                    <option value="adhesion">Demande d'adhésion</option>
+                                    <option value="information">Demande d'information</option>
+                                    <option value="partenariat">Partenariat / Collaboration</option>
+                                    <option value="evenement">Participation à un événement</option>
+                                    <option value="soutien">Demande de soutien</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group consent">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="consent" required>
+                                <span>J'accepte que mes données soient traitées pour répondre à ma demande <span class="required">*</span></span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                        </button>
+                        
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+                </div>
+                
+                <!-- Carte et informations complémentaires -->
+                <div class="map-container">
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0484260962373!2d2.620674974842285!3d6.501109823503378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1024a1e8a1234567%3A0x123456789abcdef!2sAkpakpa%2C%20Cotonou!5e0!3m2!1sfr!2sbj!4v1700000000000!5m2!1sfr!2sbj" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    
+                    <div class="map-note">
+                        <i class="fas fa-car"></i>
+                        <span>Parking disponible à proximité</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-contact">
+        <div class="container">
+            <div class="social-header">
+                <h2>Suivez-nous sur les réseaux sociaux</h2>
+                <p>Restez informée de toutes nos actualités et événements</p>
+            </div>
+            
+            <div class="social-grid">
+                <a href="#" class="social-item facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                    <span class="social-handle">@FemmeDeValeurIntl</span>
+                </a>
+                
+                <a href="#" class="social-item instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                    <span class="social-handle">@femme_devaleur_intl</span>
+                </a>
+                
+                <a href="#" class="social-item whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                    <span class="social-handle">Groupe FVI</span>
+                </a>
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Preview Section -->
+<section class="faq-preview">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <p class="section-subtitle">Retrouvez les réponses aux questions les plus courantes</p>
+        </div>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Comment devenir membre de l'association ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Pour devenir membre, vous devez :</p>
+                    <ul>
+                        <li>Être une femme et adhérer à la vision, aux objectifs et aux valeurs de l'association</li>
+                        <li>Remplir une fiche d'adhésion</li>
+                        <li>Payer la cotisation annuelle de <strong>10 000 FCFA</strong></li>
+                        <li>Votre admission est ensuite validée par le Bureau</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quels sont les avantages d'être membre ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Les membres à jour de leurs cotisations peuvent bénéficier :</p>
+                    <ul>
+                        <li>D'un accompagnement moral et solidaire au sein de l'association</li>
+                        <li>D'une réduction de la participation aux événements de Femme de Valeur International</li>
+                        <li>D'un soutien financier de <strong>20 000 FCFA</strong> en cas d'événements familiaux majeurs :
+                            <ul>
+                                <li>Mariage</li>
+                                <li>Naissance</li>
+                                <li>Décès d'un proche</li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quelles sont les différentes catégories de membres ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>L'association comprend 5 catégories de membres :</p>
+                    <ul>
+                        <li><strong>Membres fondatrices</strong> : ont participé à la création de l'association, disposent de tous les droits</li>
+                        <li><strong>Membres actives</strong> : femmes à jour de cotisation, participant régulièrement aux activités, ont droit de vote</li>
+                        <li><strong>Membres sympathisantes</strong> : soutiennent la vision sans implication active, pas de droit de vote</li>
+                        <li><strong>Membres d'honneur</strong> : titre décerné pour services exceptionnels</li>
+                        <li><strong>Membres bienfaitrices</strong> : personnes ou organisations soutenant par des dons</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quand ont lieu les réunions ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>L'association tient une <strong>réunion mensuelle chaque 2e mercredi du mois, de 10h à 12h</strong>.</p>
+                    <p>Des réunions extraordinaires peuvent être convoquées en cas de besoin par la Présidente ou à la demande du Bureau.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quel est le montant de la cotisation ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>La cotisation est de <strong>10 000 FCFA par mois</strong>, payable avant le 10 de chaque mois.</p>
+                    <p>Ces fonds sont utilisés pour financer les projets et les actions humanitaires de l'association.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quelles sont les valeurs de l'association ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Les membres s'engagent à vivre et promouvoir les valeurs chrétiennes de :</p>
+                    <ul>
+                        <li><strong>Intégrité</strong></li>
+                        <li><strong>Humilité</strong></li>
+                        <li><strong>Foi</strong></li>
+                        <li><strong>Service</strong></li>
+                        <li><strong>Compassion</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Comment perd-on la qualité de membre ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>La qualité de membre se perd par :</p>
+                    <ul>
+                        <li><strong>Démission</strong> adressée par écrit</li>
+                        <li><strong>Radiation</strong> pour comportement contraire aux buts de l'association</li>
+                        <li><strong>Non-paiement</strong> de la cotisation</li>
+                        <li><strong>Décès</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quels sont les moyens d'action de l'association ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>L'association utilise notamment :</p>
+                    <ul>
+                        <li>Organisation de séminaires, conférences, retraites et ateliers spirituels</li>
+                        <li>Activités sociales, humanitaires et d'entraide</li>
+                        <li>Accompagnement juridique des femmes en détresse (avec avocat partenaire)</li>
+                        <li>Soutien aux pauvres, malades, orphelins, veuves et chômeurs</li>
+                        <li>Création d'opportunités d'emploi et aide à la création d'entreprise</li>
+                        <li>Mobilisation en milieu rural</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Comment se compose le Bureau exécutif ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Le Bureau est composé au minimum des postes suivants :</p>
+                    <ul>
+                        <li>Présidente</li>
+                        <li>Vice-Présidente</li>
+                        <li>Secrétaire Générale</li>
+                        <li>Trésorière Générale</li>
+                    </ul>
+                    <p>Le Bureau est élu pour une durée de <strong>trois (3) ans renouvelable</strong>.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quelles sont les règles de confidentialité ?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Toute information relative aux activités, aux membres ou aux décisions internes de l'association est <strong>confidentielle</strong>.</p>
+                    <p>La discrétion est de rigueur, notamment sur les réseaux sociaux et autres canaux de communication.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prête à faire la différence ?</h2>
+                <p>Rejoignez un réseau de femmes fortes et équilibrées, engagées pour l’épanouissement de la femme.</p>
+                <div class="cta-buttons">
+                    <a href="membres.html" class="btn btn-light">Devenir membre</a>
+                    <a href="#contactForm" class="btn btn-outline-light">Nous écrire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                          <div class="logo-image-wrapper">
+                            <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-subtitle">Femme de Valeur <br>International</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">Association qui œuvre pour l'épanouissement intégral de la femme.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="#">Activités</a></li>
+                        <li><a href="membres.html">Membres</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Activités</h3>
+                    <ul class="footer-links">
+                        <li><a href="formulaire.html" class="section-link" data-section="evenements">Vos Dons</a></li>
+                        <li><a href="activites.html" class="section-link" data-section="projets-en-cours">Projets en cours</a></li>
+                        <li><a href="realisations.html" class="section-link" data-section="realisations">Réalisations</a></li>
+                        <li><a href="">Règlement intérieur</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Commune de Cotonou, 2ème Arrondissement, Quartier Ayélawadjè 1 (Akpakpa), Carré N° 221</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+229 01 96 19 06 81</span>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>associationfvi@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Femme de Valeur International. Tous droits réservés.</p>
+               
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

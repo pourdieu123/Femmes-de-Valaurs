@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Femme de Valeur International - Membres</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo-fvi.png">
+</head>
+<style>
+
+/* ===== RESPONSIVE SECTIONS MEMBRES ===== */
+
+/* Catégories membres */
+.categories-detailed-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:40px;
+}
+
+/* cartes catégories */
+.category-detailed-card{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.category-detailed-card:hover{
+    transform:translateY(-5px);
+}
+
+/* Droits et devoirs */
+.rights-duties-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+    margin-top:40px;
+}
+
+/* Cotisation et avantages */
+.benefits-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+/* Bureau exécutif */
+.board-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    margin-top:40px;
+}
+
+.board-member-card{
+    text-align:center;
+    padding:20px;
+    border-radius:10px;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.member-photo img{
+    width:100%;
+    max-width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+/* ===== TABLETTE ===== */
+
+@media (max-width:992px){
+
+.categories-detailed-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.rights-duties-grid{
+    grid-template-columns:1fr;
+}
+
+.benefits-grid{
+    grid-template-columns:1fr;
+}
+
+.board-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:600px){
+
+.categories-detailed-grid{
+    grid-template-columns:1fr;
+}
+
+.board-grid{
+    grid-template-columns:1fr;
+}
+
+.member-photo img{
+    max-width:160px;
+    height:160px;
+}
+
+.section-title{
+    font-size:22px;
+}
+
+.section-subtitle{
+    font-size:14px;
+}
+
+}
+
+</style>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-image-wrapper">
+                        <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Femme de Valeur</span>
+                        <span class="logo-subtitle">International</span>
+                    </div>
+                </a>
+                
+                <button aria-label="menu" class="menu-toggle" id="menuToggle">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="apropos.html" class="nav-link">À propos</a></li>
+                     <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle ">Activités <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                         <li><a href="activites.html" class="dropdown-link">Projets en cours</a></li>
+                            <li><a href="realisations.html" class="dropdown-link active">Réalisations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="membres.html" class="nav-link active">Membres</a></li>
+                    <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+     <section class="page-header" 
+    style="  background: url('assets/images/membres.png') no-repeat top center;
+           background-size: cover;
+           padding: 150px 0 150px;
+           color: white;
+           margin-top: 80px;">
+        <div class="container">
+            <h1 class="page-title">Nos Membres</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a> / <span>Membres</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="members-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2 class="section-title">Une communauté de femmes de valeur</h2>
+                <p>Femme de Valeur International rassemble des femmes désireuses de grandir, de se développer et d’avoir un impact positif au sein de leur génération. Découvrez les différentes catégories de membres qui composent notre association.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catégories de Membres (Article 6 des statuts) -->
+    <section class="members-categories-detailed">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Catégories de Membres</h2>
+                <p class="section-subtitle">Selon l'Article 6 de nos statuts</p>
+            </div>
+
+            <div class="categories-detailed-grid">
+                <!-- Membres Fondatrices -->
+                <div class="category-detailed-card fondatrices">
+                    <div class="category-badge">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="category-header">
+                        <h3>Membres Fondatrices</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Personnes ayant participé à la création de l'association et à l'élaboration des statuts.</p>
+                        <div class="category-rights">
+                            <h4><i class="fas fa-check-circle"></i> Droits :</h4>
+                            <ul>
+                                <li>Droit de vote à l'Assemblée Générale</li>
+                                <li>Éligible à toutes les fonctions</li>
+                                <li>Participation aux grandes orientations</li>
+                                <li>Voix prépondérante dans les décisions stratégiques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membres Actives -->
+                <div class="category-detailed-card actives">
+                    <div class="category-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="category-header">
+                        <h3>Membres Actives</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Femmes ayant adhéré à la vision, à jour de cotisation, participant régulièrement aux activités.</p>
+                        <div class="category-rights">
+                            <h4><i class="fas fa-check-circle"></i> Droits :</h4>
+                            <ul>
+                                <li>Droit de vote à l'Assemblée Générale</li>
+                                <li>Éligible aux fonctions de direction</li>
+                                <li>Participation à toutes les activités</li>
+                                <li>Accès aux formations et ateliers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membres Sympathisantes -->
+                <div class="category-detailed-card sympathisantes">
+                    <div class="category-badge">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="category-header">
+                        <h3>Membres Sympathisantes</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Personnes soutenant la vision de l'association sans être impliquées activement.</p>
+                        <div class="category-rights">
+                            <h4><i class="fas fa-check-circle"></i> Droits :</h4>
+                            <ul>
+                                <li>Participation aux événements publics</li>
+                                <li>Possibilité de faire des dons</li>
+                                <li>Abonnement à la newsletter</li>
+                                <li>Pas de droit de vote ni fonction élective</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membres d'Honneur -->
+                <div class="category-detailed-card honneur">
+                    <div class="category-badge">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="category-header">
+                        <h3>Membres d'Honneur</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Titre décerné par le Bureau à toute personne ayant rendu des services exceptionnels.</p>
+                        <div class="category-rights">
+                            <h4><i class="fas fa-check-circle"></i> Droits :</h4>
+                            <ul>
+                                <li>Invitées aux réunions et manifestations</li>
+                                <li>Reconnaissance publique</li>
+                                <li>Pas de droit de vote</li>
+                                <li>Titre honorifique à vie</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membres Bienfaitrices -->
+                <div class="category-detailed-card bienfaitrices">
+                    <div class="category-badge">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="category-header">
+                        <h3>Membres Bienfaitrices</h3>
+                    </div>
+                    <div class="category-content">
+                        <p>Personnes ou organisations soutenant régulièrement l'association par des dons financiers, matériels ou logistiques.</p>
+                        <div class="category-rights">
+                            <h4><i class="fas fa-check-circle"></i> Droits :</h4>
+                            <ul>
+                                <li>Reçoivent des rapports d'activités</li>
+                                <li>Remerciements publics</li>
+                                <li>Invitées aux événements spéciaux</li>
+                                <li>Pas de pouvoir décisionnel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Droits et Devoirs des Membres (Articles 7 et 8) -->
+    <section class="rights-duties">
+        <div class="container">
+            <div class="rights-duties-grid">
+                <!-- Droits -->
+                <div class="rights-card">
+                    <div class="card-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Droits des Membres</h3>
+                    <p class="card-subtitle">Article 7 du Règlement Intérieur</p>
+                    <ul class="rights-list">
+                        <li><i class="fas fa-check"></i> Participer aux activités et réunions</li>
+                        <li><i class="fas fa-check"></i> Être informée régulièrement des projets et décisions</li>
+                        <li><i class="fas fa-check"></i> Proposer des initiatives ou projets</li>
+                        <li><i class="fas fa-check"></i> Être élue ou désignée à des fonctions</li>
+                    </ul>
+                </div>
+
+                <!-- Devoirs -->
+                <div class="duties-card">
+                    <div class="card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Devoirs des Membres</h3>
+                    <p class="card-subtitle">Article 8 du Règlement Intérieur</p>
+                    <ul class="duties-list">
+                        <li><i class="fas fa-check"></i> Respecter les statuts et le règlement intérieur</li>
+                        <li><i class="fas fa-check"></i> Verser régulièrement sa cotisation</li>
+                        <li><i class="fas fa-check"></i> Participer activement aux activités</li>
+                        <li><i class="fas fa-check"></i> Respecter les autres membres dans l'amour et la bienveillance</li>
+                        <li><i class="fas fa-check"></i> Faire preuve de discrétion et d'intégrité</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cotisation et Avantages -->
+    <section class="membership-benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefits-info">
+                    <h2>Cotisation et Avantages</h2>
+                    <div class="cotisation-card">
+                        <div class="cotisation-amount">
+                            <span class="amount">10 000 FCFA</span>
+                            <span class="period">/ ans</span>
+                        </div>
+                    </div>
+                    
+                    <div class="advantages-list">
+                        <h3>Avantages pour les membres à jour :</h3>
+                        <ul>
+                            <li><i class="fas fa-hands-helping"></i> Accompagnement moral et solidaire</li>
+                            <li><i class="fas fa-gift"></i> Soutien financier de 20 000 FCFA pour :</li>
+                            <li class="sub-item">• Mariage</li>
+                            <li class="sub-item">• Naissance</li>
+                            <li class="sub-item">• Décès d'un proche</li>
+                        <li><i class="fas fa-chart-line"></i> Réduction de la participation aux événements <br>de Femme de Valeur International</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="benefits-cta">
+                    <div class="cta-box">
+                        <h3>Prête à nous rejoindre ?</h3>
+                        <p>Devenez membre active et participez à une œuvre qui transforme des vies</p>
+                        <a href="contact.html" class="btn btn-primary">Demander une adhésion</a>
+                        <p class="small-note">* L'admission est validée par le Bureau</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bureau Exécutif -->
+    <section class="executive-board">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bureau Exécutif</h2>
+                <p class="section-subtitle">Mandat de 3 ans renouvelable</p>
+            </div>
+
+            <div class="board-grid">
+                <div class="board-member-card">
+                    <div class="member-photo">
+                        <img src="assets/images/president.jpg" alt="Mary Ogugua EKPEI TONGSI">
+                    </div>
+                    <h3 class="member-name">Mary Ogugua EKPEI TONGSI</h3>
+                    <p class="member-position">Présidente</p>
+                </div>
+
+                <div class="board-member-card">
+                    <div class="member-photo">
+                        <img src="assets/images/vice-president.jpg" alt="Vice-Présidente">
+                    </div>
+                    <h3 class="member-name">Veronica AKPLA GNANSOUNOU</h3>
+                    <p class="member-position">Vice-Présidente</p>
+                </div>
+
+                <div class="board-member-card">
+                    <div class="member-photo">
+                        <img src="assets/images/secretaire.jpg" alt="Adeyola Rosalie BABARINDE MENSAH">
+                    </div>
+                    <h3 class="member-name">Adeyola Rosalie BABARINDE MENSAH</h3>
+                    <p class="member-position">Secrétaire Générale</p>
+                </div>
+
+                <div class="board-member-card">
+                    <div class="member-photo">
+                        <img src="assets/images/treasurer.jpg" alt="Trésorière Générale">
+                    </div>
+                    <h3 class="member-name">Espérance CHADARE HOUEWATONOU</h3>
+                    
+                    <p class="member-position">Trésorière</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prête à faire la différence ?</h2>
+                <p>Rejoignez un réseau de femmes fortes et équilibrées, engagées pour l’épanouissement de la femme.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-light">Devenir membre</a>
+                    <a href="apropos.html" class="btn btn-outline-light">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+       <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                          <div class="logo-image-wrapper">
+                            <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-subtitle">Femme de Valeur <br>International</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">Association qui œuvre pour l'épanouissement intégral de la femme.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="#">Activités</a></li>
+                        <li><a href="membres.html">Membres</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Activités</h3>
+                    <ul class="footer-links">
+                        <li><a href="formulaire.html" class="section-link" data-section="evenements">Vos Dons</a></li>
+                        <li><a href="activites.html" class="section-link" data-section="projets-en-cours">Projets en cours</a></li>
+                        <li><a href="realisations.html" class="section-link" data-section="realisations">Réalisations</a></li>
+                        <li><a href="">Règlement intérieur</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Commune de Cotonou, 2ème Arrondissement, Quartier Ayélawadjè 1 (Akpakpa), Carré N° 221</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+229 01 96 19 06 81</span>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>associationfvi@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Femme de Valeur International. Tous droits réservés.</p>
+               
+            </div>
+        </div>
+    </footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.querySelector(".nav-menu");
+
+menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+</script>
+</body>
+</html>

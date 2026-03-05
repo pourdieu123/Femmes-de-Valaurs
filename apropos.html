@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Femme de Valeur International - À propos</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo-fvi.png">
+</head>
+<style>
+
+/* ===== RESPONSIVE EXECUTIVE BOARD ===== */
+
+/* Grille par défaut (ordinateur) */
+.board-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    margin-top:40px;
+}
+
+/* Carte membre */
+.board-member{
+    text-align:center;
+    padding:20px;
+    border-radius:10px;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.board-member:hover{
+    transform:translateY(-5px);
+}
+
+/* Image */
+.member-photo img{
+    width:100%;
+    max-width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+/* Nom */
+.member-name{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:5px;
+}
+
+/* Poste */
+.member-position{
+    font-size:14px;
+    color:#777;
+}
+
+/* ===== TABLETTE ===== */
+
+@media (max-width:992px){
+
+    .board-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:600px){
+
+    .board-grid{
+        grid-template-columns:1fr;
+    }
+
+    .member-photo img{
+        max-width:160px;
+        height:160px;
+    }
+
+    .member-name{
+        font-size:16px;
+    }
+
+}
+
+</style>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+               <!-- Dans votre header -->
+<a href="index.html" class="logo">
+    <div class="logo-image-wrapper">
+        <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+    </div>
+    <div class="logo-text">
+        <span class="logo-title">Femme de Valeur</span>
+        <span class="logo-subtitle">International</span>
+    </div>
+</a>
+                
+                <button aria-label="menu" class="menu-toggle" id="menuToggle">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="apropos.html" class="nav-link active">À propos</a></li>
+                     <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle ">Activités <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                         <li><a href="activites.html" class="dropdown-link">Projets en cours</a></li>
+                            <li><a href="realisations.html" class="dropdown-link active">Réalisations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="membres.html" class="nav-link">Membres</a></li>
+                    <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" 
+    style="  background:    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  
+url('assets/images/apropos.png') no-repeat center center;
+           background-size: cover;
+           padding: 150px 0 150px;
+           color: white;
+           margin-top: 80px;">
+
+    <div class="container">
+        <h1 class="page-title">À propos de nous</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Accueil</a> / <span>À propos</span>
+        </div>
+    </div>
+
+</section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h2>Notre Mission</h2>
+                    <p>Notre mission est de susciter des femmes de valeur capables d’impacter leur génération</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h2>Notre Vision</h2>
+                    <ul class="vision-list">
+                        <li><i class="fas fa-check-circle"></i> Susciter des femmes fortes et spirituelles qui feront des exploits dans cette génération</li>
+                        <li><i class="fas fa-check-circle"></i> Donner aux femmes les moyens d'être des modèles et des leaders dans tous les aspects de la vie</li>
+                        <li><i class="fas fa-check-circle"></i> Outiller les femmes vertueuses pour réussir dans le foyer, le ministère, les affaires</li>
+                        <li><i class="fas fa-check-circle"></i> Inspirer les femmes à découvrir leur but, aspirer à la grandeur et vivre une vie épanouie</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Histoire / Présentation -->
+    <section class="about-story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2 class="section-title-left">Qui sommes-nous ?</h2>
+                    <p class="story-text">Femme de Valeur International est une association fondée à Cotonou, au Bénin, avec pour mission de rassembler des femmes animées par la foi chrétienne et désireuses de grandir spirituellement tout en ayant un impact positif dans leur génération.</p>
+                    <p class="story-text">Notre association est régie conformément à la loi du 1er juillet 1901 relative aux associations. Notre siège social est situé dans la Commune de Cotonou, 2ème Arrondissement, Quartier Ayélawadjè 1 (Akpakpa), Carré N° 221.</p>
+                    
+                    <div class="story-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2024</span>
+                            <span class="stat-label">Année de création</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Membres actives</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projets réalisés</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="assets/images/about.png" alt="Femmes de Valeur International">
+                    <div class="story-quote">
+                        <i class="fas fa-quote-center"></i>
+                        <p>Des femmes vertueuses qui manifestent la gloire de Dieu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Valeurs -->
+    <section class="our-values">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Valeurs Fondamentales</h2>
+                <p class="section-subtitle">Des principes chrétiens qui guident chacune de nos actions</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Intégrité</h3>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <h3>Humilité</h3>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h3>Foi</h3>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Service</h3>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Compassion</h3>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Solidarité</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Moyens d'action -->
+    <section class="our-actions">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Moyens d'Action</h2>
+                <p class="section-subtitle">Comment nous concrétisons notre mission au quotidien</p>
+            </div>
+            
+            <div class="actions-grid">
+                <div class="action-item">
+                    <i class="fas fa-church"></i>
+                    <span>Organisation de séminaires, conférences, retraites et ateliers spirituels</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <span>Activités sociales, humanitaires et d'entraide</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-gavel"></i>
+                    <span>Accompagnement juridique des femmes en détresse (avec avocat partenaire)</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Soutien aux pauvres, malades, orphelins, veuves et chômeurs</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Création d'opportunités d'emploi, aide à la création d'entreprise</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-store"></i>
+                    <span>Soutien au commerce et à l'éducation</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-tractor"></i>
+                    <span>Mobilisation en milieu rural auprès des missionnaires et femmes isolées</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-hands"></i>
+                    <span>Accompagnement moral et solidaire des membres</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bureau Exécutif -->
+    <section class="executive-board">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Bureau Exécutif</h2>
+                <p class="section-subtitle">Des femmes engagées au service de la vision</p>
+            </div>
+            
+            <div class="board-grid">
+                <div class="board-member">
+                    <div class="member-photo">
+                        <img src="assets/images/president.jpg" alt="Mary Ogugua EKPEI TONGSI">
+                    </div>
+                    <h3 class="member-name">Mary Ogugua EKPEI TONGSI</h3>
+                    <p class="member-position">Présidente</p>
+                </div>
+                 
+                <div class="board-member">
+                    <div class="member-photo">
+                        <img src="assets/images/vice-treasurer.jpg" alt="Vice-Présidente">
+                    </div>
+                    <h3 class="member-name">Veronica AKPLA GNANSOUNOU</h3>
+                    <p class="member-position">Vice-Présidente</p>
+                </div>
+                <div class="board-member">
+                    <div class="member-photo">
+                        <img src="assets/images/vice-president.jpg" alt="Vice-Présidente">
+                    </div>
+                    <h3 class="member-name">Adeyola Rosalie BABARINDE MENSAH</h3>
+                    <p class="member-position">Secrétaire Générale</p>
+                </div>
+                
+                <div class="board-member">
+                    <div class="member-photo">
+                        <img src="assets/images/treasurer.jpg" alt="Trésorière">
+                    </div>
+                    <h3 class="member-name">Espérance CHADARE HOUEWATONOU</h3>
+                    <p class="member-position">Trésorière</p>
+                </div>
+               
+            </div>
+            
+            <div class="board-note">
+                <p><i class="fas fa-info-circle"></i> Bureau élu pour une durée de trois (3) ans renouvelable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents légaux -->
+    <section class="legal-documents">
+        <div class="container">
+           <div class="documents-grid">
+
+    <div class="document-card">
+        <i class="fas fa-file-alt"></i>
+        <h3>Règlement Intérieur</h3>
+        <p>Consultez le règlement intérieur qui régit notre fonctionnement</p>
+        <a href="pdf/1.pdf" class="btn-download" download target="_blank">
+            Télécharger
+        </a>
+    </div>
+    
+    <div class="document-card">
+        <i class="fas fa-file-signature"></i>
+        <h3>Critères d'adhésion</h3>
+        <p>Découvrez les conditions pour rejoindre notre association</p>
+        <a href="pdf/2.pdf" class="btn-download" download target="_blank"> 
+            Télécharger
+        </a>
+    </div>
+     
+    <div class="document-card">
+        <i class="fas fa-file-signature"></i>
+        <h3>Fiche d'adhésion</h3>
+        <p>Découvrez les conditions pour rejoindre notre association</p>
+        <a href="pdf/3.pdf" class="btn-download" download target="_blank"> 
+            Télécharger
+        </a>
+    </div>
+
+</div>
+
+        </div>
+    </section>
+
+    <!-- CTA Devenir Membre -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prête à nous rejoindre ?</h2>
+                <p>Devenez membre de Femme de Valeur International et participez à une œuvre qui transforme des vies</p>
+                <div class="cta-buttons">
+                    <a href="membres.html" class="btn btn-light">Devenir membre</a>
+                    <a href="contact.html" class="btn btn-outline-light">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                          <div class="logo-image-wrapper">
+                            <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-subtitle">Femme de Valeur <br>International</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">Association qui œuvre pour l'épanouissement intégral de la femme.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="#">Activités</a></li>
+                        <li><a href="membres.html">Membres</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Activités</h3>
+                    <ul class="footer-links">
+                        <li><a href="formulaire.html" class="section-link" data-section="evenements">Vos Dons</a></li>
+                        <li><a href="activites.html" class="section-link" data-section="projets-en-cours">Projets en cours</a></li>
+                        <li><a href="realisations.html" class="section-link" data-section="realisations">Réalisations</a></li>
+                        <li><a href="">Règlement intérieur</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Commune de Cotonou, 2ème Arrondissement, Quartier Ayélawadjè 1 (Akpakpa), Carré N° 221</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+229 01 96 19 06 81</span>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>associationfvi@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Femme de Valeur International. Tous droits réservés.</p>
+               
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

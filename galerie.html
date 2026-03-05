@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Femme de Valeur International</title>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+ 
+    <!-- CSS spécifique pour la galerie -->
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-image-wrapper">
+                        <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Femme de Valeur</span>
+                        <span class="logo-subtitle">International</span>
+                    </div>
+                </a>
+                <button aria-label="menu" class="menu-toggle" id="menuToggle">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="apropos.html" class="nav-link">À propos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">Activités <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                         <li><a href="activites.html" class="dropdown-link">Projets en cours</a></li>
+                            <li><a href="realisations.html" class="dropdown-link active">Réalisations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="membres.html" class="nav-link">Membres</a></li>
+                    <li><a href="galerie.html" class="nav-link active">Galerie</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" 
+    style="  background: url('assets/images/galerie.jpeg') no-repeat;
+           background-size: cover;
+           padding: 150px 0 150px;
+           color: white;
+           margin-top: 80px;">
+        <div class="container">
+            <h1 class="page-title">Galerie</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a> / <span>Galerie</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtres avec compteurs -->
+   <section class="filter-section">
+    <div class="container">
+        <div class="filter-wrapper">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Toutes </button>
+                <button class="filter-btn" data-filter="conferences">Conférences </button>
+                <button class="filter-btn" data-filter="inauguration">Inauguration </button>
+                <button class="filter-btn" data-filter="ceremonie">Autre cérémonie </button>
+            </div>
+            <div class="filter-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Rechercher dans la galerie...">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Galerie principale -->
+<section class="gallery-main">
+    <div class="container">
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!--------- CONFERENCES ------------>
+            <!-- Image 1 -->
+            <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/08_2025/ (1).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Aout 2025 Porto-Novo</h3>
+                    <p><i class="far fa-calendar-alt"></i> Aout 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Porto-Novo</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+            <!-- Image 2 -->
+            <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/08_2025/ (2).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Aout 2025 Porto-Novo</h3>
+                    <p><i class="far fa-calendar-alt"></i> Aout 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Porto-Novo</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+            <!-- Image 3 -->
+            <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/10_2024/ (1).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Octobre 2024 Parakou</h3>
+                    <p><i class="far fa-calendar-alt"></i>Octobre 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Parakou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+             <!-- Image 4 -->
+            <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/10_2024/(2).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Octobre 2024 Parakou</h3>
+                    <p><i class="far fa-calendar-alt"></i> Octobre 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Parakou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+             <!-- Image 5 -->
+            <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/10_2024/(3).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Octobre 2024 Parakou</h3>
+                    <p><i class="far fa-calendar-alt"></i> Octobre 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Parakou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+             <!-- Image 6 -->
+            <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/07_2025/ (1).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Juillet 2025 Godomey</h3>
+                    <p><i class="far fa-calendar-alt"></i> Juillet 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Godomey</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+             <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/07_2025/ (2).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Juillet 2025 Godomey</h3>
+                    <p><i class="far fa-calendar-alt"></i> Juillet 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Godomey</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+             <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/07_2025/ (3).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Juillet 2025 Godomey</h3>
+                    <p><i class="far fa-calendar-alt"></i> Juillet 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Godomey</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+             <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/07_2025/ (4).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Juillet 2025 Godomey</h3>
+                    <p><i class="far fa-calendar-alt"></i> Juillet 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Godomey</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+             <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/07_2024/ (1).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Juillet 2024 Cotonou</h3>
+                    <p><i class="far fa-calendar-alt"></i> Juillet 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+                         <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/07_2024/ (2).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Juillet 2024 Cotonou</h3>
+                    <p><i class="far fa-calendar-alt"></i> Juillet 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+                         <div class="gallery-item" data-category="conferences">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Conference/07_2024/(3).jpeg" alt="Conférence femmes">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Conférences</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Conférence Juillet 2024 Cotonou</h3>
+                    <p><i class="far fa-calendar-alt"></i> Juillet 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                    
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-----------INAUGURATION------------->
+            <!-- Image 2 -->
+            <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (2).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 3 -->
+            <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (3).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 4 -->
+            <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (4).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 5-->
+              <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (5).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 6 -->
+            <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (6).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 7 -->
+           <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (7).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 8-->
+              <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (8).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 9 -->
+              <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (9).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 10 -->
+             <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (10).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 11-->
+            <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/ (11).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- Image 12 -->
+            <div class="gallery-item" data-category="inauguration">
+                <div class="gallery-image-wrapper">
+                    <img class="gallery-image" src="assets/images/Inauguration/(12).jpeg">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <span class="gallery-category">Inauguration</span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Inauguration de l'association</h3>
+                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
+                    <div class="caption-footer">
+                        <span class="views"><i class="far fa-eye"></i>Voir</span>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+    <!-- Lightbox (modal pour agrandir les images) -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <button class="lightbox-close">&times;</button>
+        <button aria-label="direction" class="lightbox-nav prev"><i class="fas fa-chevron-left"></i></button>
+        <button  aria-label="direction" class="lightbox-nav next"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+         <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                          <div class="logo-image-wrapper">
+                            <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-subtitle">Femme de Valeur <br>International</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">Association qui œuvre pour l'épanouissement intégral de la femme.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="#">Activités</a></li>
+                        <li><a href="membres.html">Membres</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Activités</h3>
+                    <ul class="footer-links">
+                        <li><a href="formulaire.html" class="section-link" data-section="evenements">Vos Dons</a></li>
+                        <li><a href="activites.html" class="section-link" data-section="projets-en-cours">Projets en cours</a></li>
+                        <li><a href="realisations.html" class="section-link" data-section="realisations">Réalisations</a></li>
+                        <li><a href="">Règlement intérieur</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Commune de Cotonou, 2ème Arrondissement, Quartier Ayélawadjè 1 (Akpakpa), Carré N° 221</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+229 01 96 19 06 81</span>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>associationfvi@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Femme de Valeur International. Tous droits réservés.</p>
+               
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <script>
+        // Menu toggle pour mobile
+        document.getElementById('menuToggle')?.addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-menu')?.classList.toggle('active');
+        });
+
+        // Filtres de la galerie
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Enlever la classe active de tous les boutons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Ajouter la classe active au bouton cliqué
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('galleryLightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.prev');
+        const nextBtn = lightbox.querySelector('.next');
+        
+        let currentIndex = 0;
+        const images = [];
+        
+        // Récupérer toutes les images de la galerie
+        document.querySelectorAll('.gallery-item').forEach((item, index) => {
+            const img = item.querySelector('.gallery-image');
+            const title = item.querySelector('h3')?.textContent || '';
+            const desc = item.querySelectorAll('p')[0]?.textContent || '';
+            const location = item.querySelectorAll('p')[1]?.textContent || '';
+            
+            images.push({
+                src: img.src,
+                title: title,
+                desc: desc,
+                location: location
+            });
+            
+            // Ouvrir lightbox au clic sur l'image
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        function updateLightbox() {
+            const img = images[currentIndex];
+            lightboxImg.src = img.src;
+            lightboxCaption.innerHTML = `<strong>${img.title}</strong> - ${img.desc} ${img.location}`;
+        }
+        
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightbox();
+        }
+        
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightbox();
+        }
+        
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        nextBtn.addEventListener('click', nextImage);
+        prevBtn.addEventListener('click', prevImage);
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'ArrowLeft') {
+                prevImage();
+            }
+        });
+
+        // Recherche simple
+        const searchInput = document.querySelector('.filter-search input');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                galleryItems.forEach(item => {
+                    const title = item.querySelector('h3')?.textContent.toLowerCase() || '';
+                    const desc = item.querySelectorAll('p')[0]?.textContent.toLowerCase() || '';
+                    
+                    if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Femme de Valeur International - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo-fvi.png">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+               <a href="index.html" class="logo">
+    <div class="logo-image-wrapper">
+        <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+    </div>
+    <div class="logo-text">
+        <span class="logo-title">Femme de Valeur</span>
+        <span class="logo-subtitle">International</span>
+    </div>
+</a>
+                
+                <button aria-label="menu" class="menu-toggle" id="menuToggle">
+                    <span class="hamburger"></span>
+                  
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="apropos.html" class="nav-link">À propos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle ">Activités <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                         <li><a href="activites.html" class="dropdown-link">Projets en cours</a></li>
+                            <li><a href="realisations.html" class="dropdown-link active">Réalisations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="membres.html" class="nav-link">Membres</a></li>
+                    <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/arrière1.png');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Susciter des femmes fortes et équilibrées</h1>
+                        <p class="hero-text">Une association qui œuvre pour l'épanouissement intégral de la femme</p>
+                        <div class="hero-buttons">
+                            <a href="#evenements" class="btn btn-primary section-link" data-section="evenements">Découvrir nos événements</a>
+                            <a href="contact.html" class="btn btn-secondary">Nous rejoindre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/arrière2.png');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Femmes de valeur, femmes d’impact</h1>
+                        <p class="hero-text">Donner aux femmes les moyens d'être des modèles et des leaders dans tous les aspects de la vie</p>
+                        <div class="hero-buttons">
+                            <a href="#projets-en-cours" class="btn btn-primary section-link" data-section="projets-en-cours">Nos projets</a>
+                            <a href="apropos.html" class="btn btn-secondary">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/arrière3.png');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Outiller les femmes pour réussir leur vie</h1>
+                        <p class="hero-text">Dans le foyer, le ministère, les affaires et tous les domaines de la vie</p>
+                        <div class="hero-buttons">
+                            <a href="#realisations" class="btn btn-primary section-link" data-section="realisations">Nos réalisations</a>
+                            <a href="membres.html" class="btn btn-secondary">Devenir membre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+        <div class="slider-controls">
+            <button   aria-label="direction" class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                
+            </div>
+            <button aria-label="direction" class="slider-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Femme de Valeur International</h2>
+                <p class="section-subtitle">Notre mission est de susciter des femmes de valeur capables d’impacter leur génération</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="about-card-title">Notre Vision</h3>
+                    <p class="about-card-text">Susciter des femmes fortes et spirituelles qui feront des exploits dans cette génération.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="about-card-title">Nos Valeurs</h3>
+                    <p class="about-card-text">Intégrité, humilité, foi, service et compassion .</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="about-card-title">Nos Objectifs</h3>
+                    <p class="about-card-text">Outiller les femmes vertueuses pour réussir dans le foyer, le ministère et les affaires.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3 class="about-card-title">Notre Portée</h3>
+                    <p class="about-card-text">Inspirer les femmes à découvrir leur but, aspirer à la grandeur et vivre une vie épanouie.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="apropos.html" class="btn btn-outline">En savoir plus sur notre association</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Activities Section -->
+    <section class="activities-section">
+        <div class="container">
+            <div class="activities-header">
+                <h2 class="section-title">Nos Activités</h2>
+                <div class="activities-filter">
+                    <button class="filter-btn active" data-filter="all">Tout</button>
+                    <button class="filter-btn" data-filter="evenements">Événements</button>
+                    <button class="filter-btn" data-filter="projets-en-cours">Projets en cours</button>
+                    <button class="filter-btn" data-filter="realisations">Réalisations</button>
+                </div>
+            </div>
+            
+            <div class="activities-grid">
+                <!-- Evenements -->
+                <div class="activity-card" data-category="evenements">
+                    <div class="activity-image">
+                        <img src="assets/images/realisation13.jpeg" alt="Conférence mensuelle">
+                        <div class="activity-category">Événement</div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-date">
+                            <i class="far fa-calendar"></i> 
+                            <span>Chaque 2e mercredi du mois</span>
+                        </div>
+                        <h3 class="activity-title">Réunion Mensuelle</h3>
+                        <p class="activity-description">Rencontre de toutes les membres pour échanger, prier et planifier les activités. De 10h à 12h, au siège de l'association.</p>
+                        <div class="activity-tags">
+                            <span class="tag">Spiritualité</span>
+                            <span class="tag">Échange</span>
+                        </div>
+                        <button class="activity-details-btn" data-id="1">Voir détails <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="activity-card" data-category="evenements">
+                    <div class="activity-image">
+                        <img src="assets/images/realisation10.jpeg" alt="Atelier développement personnel">
+                        <div class="activity-category">Événement</div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-date">
+                            <i class="far fa-calendar"></i> 
+                            <span>25 Octobre 2025</span>
+                        </div>
+                        <h3 class="activity-title">Atelier de Développement Personnel</h3>
+                        <p class="activity-description">Session intensive pour découvrir son potentiel, définir ses objectifs et développer sa confiance en soi.</p>
+                        <div class="activity-tags">
+                            <span class="tag">Développement</span>
+                            <span class="tag">Leadership</span>
+                        </div>
+                        <button class="activity-details-btn" data-id="2">Voir détails <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Projets en cours -->
+                <div class="activity-card" data-category="projets-en-cours">
+                    <div class="activity-image">
+                        <img src="assets/images/realisation4.jpeg" alt="Soutien aux femmes en détresse">
+                        <div class="activity-category">Projet en cours</div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-date">
+                            <i class="far fa-calendar"></i> 
+                            <span>En cours jusqu'en Décembre 2025</span>
+                        </div>
+                        <h3 class="activity-title">Soutien Juridique aux Femmes</h3>
+                        <p class="activity-description">Accompagnement juridique des femmes en détresse avec l'appui d'un avocat partenaire de l'association.</p>
+                        <div class="activity-tags">
+                            <span class="tag">Juridique</span>
+                            <span class="tag">Soutien</span>
+                            <span class="tag">Femmes</span>
+                        </div>
+                        <button class="activity-details-btn" data-id="3">Voir détails <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="activity-card" data-category="projets-en-cours">
+                    <div class="activity-image">
+                        <img src="assets/images/realisation13.jpeg" alt="Programme d'autonomisation">
+                        <div class="activity-category">Projet en cours</div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-date">
+                            <i class="far fa-calendar"></i> 
+                            <span>Lancé en Juin 2025</span>
+                        </div>
+                        <h3 class="activity-title">Programme d'Autonomisation Économique</h3>
+                        <p class="activity-description">Formation à la création d'entreprise et accompagnement des femmes entrepreneures dans leurs projets.</p>
+                        <div class="activity-tags">
+                            <span class="tag">Entreprenariat</span>
+                            <span class="tag">Formation</span>
+                        </div>
+                        <button class="activity-details-btn" data-id="4">Voir détails <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Réalisations -->
+                <div class="activity-card" data-category="realisations">
+                    <div class="activity-image">
+                        <img src="assets/images/realisation11.jpeg" alt="Campagne de sensibilisation">
+                        <div class="activity-category">Réalisation</div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-date">
+                            <i class="far fa-calendar"></i> 
+                            <span>Mars 2025</span>
+                        </div>
+                        <h3 class="activity-title">Campagne de Sensibilisation en Milieu Rural</h3>
+                        <p class="activity-description">Mission réussie auprès de 300 femmes dans 5 villages pour les sensibiliser à leurs droits et à l'éducation.</p>
+                        <div class="activity-tags">
+                            <span class="tag">Sensibilisation</span>
+                            <span class="tag">Rural</span>
+                            <span class="tag">Éducation</span>
+                        </div>
+                        <button class="activity-details-btn" data-id="5">Voir détails <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="activity-card" data-category="realisations">
+                    <div class="activity-image">
+                        <img src="assets/images/realisation12.jpeg" alt="Aide humanitaire">
+                        <div class="activity-category">Réalisation</div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-date">
+                            <i class="far fa-calendar"></i> 
+                            <span>Janvier 2025</span>
+                        </div>
+                        <h3 class="activity-title">Distribution de Kits Scolaires</h3>
+                        <p class="activity-description">Distribution de plus de 500 kits scolaires complets aux enfants défavorisés pour la rentrée scolaire.</p>
+                        <div class="activity-tags">
+                            <span class="tag">Humanitaire</span>
+                            <span class="tag">Éducation</span>
+                            <span class="tag">Enfants</span>
+                        </div>
+                        <button class="activity-details-btn" data-id="6">Voir détails <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership CTA -->
+    <section class="membership-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Devenez membre de notre association</h2>
+                <p class="cta-text">Rejoignez un réseau de femmes fortes et spirituelles qui œuvrent pour l'épanouissement intégral de la femme selon les valeurs chrétiennes.</p>
+                <div class="cta-buttons">
+                    <a href="membres.html" class="btn btn-light">Devenir membre</a>
+                    <a href="contact.html" class="btn btn-outline-light">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                          <div class="logo-image-wrapper">
+                            <img src="assets/images/logo.jpeg" alt="Femme de Valeur International" class="logo-img">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-subtitle">Femme de Valeur <br>International</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">Association qui œuvre pour l'épanouissement intégral de la femme.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="#">Activités</a></li>
+                        <li><a href="membres.html">Membres</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Activités</h3>
+                    <ul class="footer-links">
+                        <li><a href="formulaire.html" class="section-link" data-section="evenements">Vos Dons</a></li>
+                        <li><a href="activites.html" class="section-link" data-section="projets-en-cours">Projets en cours</a></li>
+                        <li><a href="realisations.html" class="section-link" data-section="realisations">Réalisations</a></li>
+                        <li><a href="">Règlement intérieur</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Commune de Cotonou, 2ème Arrondissement, Quartier Ayélawadjè 1 (Akpakpa), Carré N° 221</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+229 01 96 19 06 81</span>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <span>associationfvi@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Femme de Valeur International. Tous droits réservés.</p>
+               
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Activity Details Modal -->
+    <div class="modal" id="activityModal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
