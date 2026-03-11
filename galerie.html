@@ -12,7 +12,9 @@
     <!-- CSS spécifique pour la galerie -->
     <link rel="stylesheet" href="style1.css">
 </head>
+
 <body>
+
     <!-- Header / Navigation -->
     <header class="header">
         <div class="container">
@@ -34,7 +36,7 @@
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="apropos.html" class="nav-link">À propos</a></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active">Activités <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link dropdown-toggle ">Activités <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                          <li><a href="activites.html" class="dropdown-link">Projets en cours</a></li>
                             <li><a href="realisations.html" class="dropdown-link active">Réalisations</a></li>
@@ -399,25 +401,7 @@
                     </div>
                 </div>
             </div>
-             <!-- Image 6 -->
-            <div class="gallery-item" data-category="inauguration">
-                <div class="gallery-image-wrapper">
-                    <img class="gallery-image" src="assets/images/Inauguration/ (6).jpeg">
-                    <div class="image-overlay">
-                        <i class="fas fa-expand-alt"></i>
-                    </div>
-                    <span class="gallery-category">Inauguration</span>
-                </div>
-                <div class="gallery-caption">
-                    <h3>Inauguration de l'association</h3>
-                    <p><i class="far fa-calendar-alt"></i> 10 Mai 2024</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Cotonou</p>
-                    <div class="caption-footer">
-                        <span class="views"><i class="far fa-eye"></i>Voir</span>
-                        
-                    </div>
-                </div>
-            </div>
+          
              <!-- Image 7 -->
            <div class="gallery-item" data-category="inauguration">
                 <div class="gallery-image-wrapper">
@@ -618,9 +602,295 @@
             </div>
         </div>
     </footer>
+<script>
+    // Menu toggle pour mobile
+    document.getElementById('menuToggle')?.addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.nav-menu')?.classList.toggle('active');
+    });
 
+    // Système de filtrage amélioré pour la galerie
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const searchInput = document.querySelector('.filter-search input');
+        const galleryGrid = document.getElementById('galleryGrid');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        let currentFilter = 'all';
+        let currentSearch = '';
+        let filterTimeout;
+        
+        // Initialiser la lightbox AVANT le filtrage
+        initLightbox();
+        
+        // Mettre à jour les compteurs sur les boutons
+        function updateCounters() {
+            filterButtons.forEach(button => {
+                const filter = button.getAttribute('data-filter');
+                let count;
+                
+                if (filter === 'all') {
+                    count = galleryItems.length;
+                } else {
+                    count = document.querySelectorAll(`.gallery-item[data-category="${filter}"]`).length;
+                }
+                
+                // Mettre à jour ou ajouter le compteur
+                let countSpan = button.querySelector('.count');
+                if (!countSpan) {
+                    countSpan = document.createElement('span');
+                    countSpan.className = 'count';
+                    button.appendChild(countSpan);
+                }
+                countSpan.textContent = count;
+            });
+        }
+        
+        // Fonction de filtrage principale
+        function applyFilters() {
+            // Ajouter une classe de chargement
+            galleryGrid.classList.add('loading');
+            
+            clearTimeout(filterTimeout);
+            filterTimeout = setTimeout(() => {
+                let visibleCount = 0;
+                
+                galleryItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    const title = item.querySelector('h3')?.textContent.toLowerCase() || '';
+                    const desc = item.querySelectorAll('p')[0]?.textContent.toLowerCase() || '';
+                    
+                    // Vérifier le filtre de catégorie
+                    const categoryMatch = currentFilter === 'all' || category === currentFilter;
+                    
+                    // Vérifier la recherche
+                    const searchMatch = currentSearch === '' || 
+                                      title.includes(currentSearch) || 
+                                      desc.includes(currentSearch);
+                    
+                    // Appliquer le filtrage
+                    if (categoryMatch && searchMatch) {
+                        item.classList.remove('filtered-out');
+                        visibleCount++;
+                    } else {
+                        item.classList.add('filtered-out');
+                    }
+                });
+                
+                // Retirer la classe de chargement
+                galleryGrid.classList.remove('loading');
+                
+                // Afficher un message si aucun résultat
+                showNoResultsMessage(visibleCount === 0);
+                
+                // Mettre à jour les compteurs
+                updateCounters();
+            }, 300);
+        }
+        
+        // Afficher/masquer le message "Aucun résultat"
+        function showNoResultsMessage(show) {
+            let noResultsEl = document.querySelector('.no-results-message');
+            
+            if (show) {
+                if (!noResultsEl) {
+                    noResultsEl = document.createElement('div');
+                    noResultsEl.className = 'no-results-message';
+                    noResultsEl.innerHTML = `
+                        <i class="fas fa-images"></i>
+                        <p>Aucune image ne correspond à votre recherche</p>
+                        <button class="btn-reset" onclick="resetFilters()">Voir toutes les images</button>
+                    `;
+                    galleryGrid.appendChild(noResultsEl);
+                }
+            } else {
+                if (noResultsEl) {
+                    noResultsEl.remove();
+                }
+            }
+        }
+        
+        // Réinitialiser les filtres
+        window.resetFilters = function() {
+            currentFilter = 'all';
+            currentSearch = '';
+            
+            // Réinitialiser les boutons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector('[data-filter="all"]').classList.add('active');
+            
+            // Réinitialiser la recherche
+            if (searchInput) {
+                searchInput.value = '';
+            }
+            
+            // Appliquer les filtres
+            applyFilters();
+        };
+        
+        // Gestionnaire pour les boutons de filtre
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Mettre à jour la classe active
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Mettre à jour le filtre courant
+                currentFilter = this.getAttribute('data-filter');
+                
+                // Appliquer les filtres
+                applyFilters();
+            });
+        });
+        
+        // Gestionnaire pour la recherche avec debounce
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                currentSearch = this.value.toLowerCase().trim();
+                applyFilters();
+            });
+        }
+        
+        // Initialisation
+        updateCounters();
+        applyFilters();
+    });
 
+    // Fonction d'initialisation de la lightbox (séparée)
+    function initLightbox() {
+        const lightbox = document.getElementById('galleryLightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.prev');
+        const nextBtn = lightbox.querySelector('.next');
+        
+        let currentIndex = 0;
+        const images = [];
+        
+        // Récupérer toutes les images de la galerie
+        document.querySelectorAll('.gallery-item').forEach((item, index) => {
+            const img = item.querySelector('.gallery-image');
+            const title = item.querySelector('h3')?.textContent || '';
+            const desc = item.querySelectorAll('p')[0]?.textContent || '';
+            const location = item.querySelectorAll('p')[1]?.textContent || '';
+            
+            images.push({
+                src: img.src,
+                title: title,
+                desc: desc,
+                location: location,
+                element: item
+            });
+            
+            // Supprimer l'ancien écouteur et en ajouter un nouveau
+            item.removeEventListener('click', handleImageClick);
+            item.addEventListener('click', handleImageClick);
+        });
+        
+        // Fonction pour gérer le clic sur une image
+        function handleImageClick(e) {
+            // Ne pas ouvrir si on clique sur un lien ou bouton
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+            
+            // Trouver l'index de l'image cliquée
+            const clickedItem = e.currentTarget;
+            const newIndex = images.findIndex(img => img.element === clickedItem);
+            
+            if (newIndex !== -1) {
+                currentIndex = newIndex;
+                updateLightbox();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function updateLightbox() {
+            const img = images[currentIndex];
+            lightboxImg.src = img.src;
+            lightboxCaption.innerHTML = `<strong>${img.title}</strong> - ${img.desc} ${img.location}`;
+        }
+        
+        function nextImage() {
+            // Trouver le prochain élément visible
+            let newIndex = currentIndex;
+            let found = false;
+            let attempts = 0;
+            
+            do {
+                newIndex = (newIndex + 1) % images.length;
+                attempts++;
+                
+                // Vérifier si l'élément est visible (pas filtered-out)
+                if (!images[newIndex].element.classList.contains('filtered-out')) {
+                    found = true;
+                    break;
+                }
+            } while (attempts < images.length);
+            
+            if (found) {
+                currentIndex = newIndex;
+                updateLightbox();
+            }
+        }
+        
+        function prevImage() {
+            // Trouver l'élément précédent visible
+            let newIndex = currentIndex;
+            let found = false;
+            let attempts = 0;
+            
+            do {
+                newIndex = (newIndex - 1 + images.length) % images.length;
+                attempts++;
+                
+                // Vérifier si l'élément est visible (pas filtered-out)
+                if (!images[newIndex].element.classList.contains('filtered-out')) {
+                    found = true;
+                    break;
+                }
+            } while (attempts < images.length);
+            
+            if (found) {
+                currentIndex = newIndex;
+                updateLightbox();
+            }
+        }
+        
+        // Gestionnaires d'événements
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        nextBtn.addEventListener('click', nextImage);
+        prevBtn.addEventListener('click', prevImage);
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'ArrowLeft') {
+                prevImage();
+            }
+        });
+    }
+</script>
 
+<script src="script.js"></script>
     <!-- Scripts -->
     <script>
         // Menu toggle pour mobile

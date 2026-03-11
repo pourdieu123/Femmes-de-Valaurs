@@ -4435,3 +4435,434 @@ HEADER
         grid-template-columns: 1fr;
     }
 }
+/*-----------------------------------------
+------GALERIE--------------------------*/
+/* ------------------------------------
+   AMÉLIORATION DU FILTRAGE DE LA GALERIE
+   ------------------------------------ */
+
+/* Assurer que tous les éléments sont visibles par défaut */
+.gallery-item {
+    display: block !important;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+}
+
+/* Classe pour masquer les éléments filtrés */
+.gallery-item.filtered-out {
+    display: none !important;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Animation d'apparition des éléments filtrés */
+@keyframes galleryItemFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-item:not(.filtered-out) {
+    animation: galleryItemFadeIn 0.5s ease forwards;
+}
+
+/* Animation différée pour un effet cascade */
+.gallery-item:not(.filtered-out):nth-child(1) { animation-delay: 0.05s; }
+.gallery-item:not(.filtered-out):nth-child(2) { animation-delay: 0.1s; }
+.gallery-item:not(.filtered-out):nth-child(3) { animation-delay: 0.15s; }
+.gallery-item:not(.filtered-out):nth-child(4) { animation-delay: 0.2s; }
+.gallery-item:not(.filtered-out):nth-child(5) { animation-delay: 0.25s; }
+.gallery-item:not(.filtered-out):nth-child(6) { animation-delay: 0.3s; }
+.gallery-item:not(.filtered-out):nth-child(7) { animation-delay: 0.35s; }
+.gallery-item:not(.filtered-out):nth-child(8) { animation-delay: 0.4s; }
+.gallery-item:not(.filtered-out):nth-child(9) { animation-delay: 0.45s; }
+.gallery-item:not(.filtered-out):nth-child(10) { animation-delay: 0.5s; }
+.gallery-item:not(.filtered-out):nth-child(11) { animation-delay: 0.55s; }
+.gallery-item:not(.filtered-out):nth-child(12) { animation-delay: 0.6s; }
+.gallery-item:not(.filtered-out):nth-child(13) { animation-delay: 0.65s; }
+.gallery-item:not(.filtered-out):nth-child(14) { animation-delay: 0.7s; }
+.gallery-item:not(.filtered-out):nth-child(15) { animation-delay: 0.75s; }
+
+/* Amélioration des boutons de filtre */
+.filter-section .filter-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-section .filter-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.filter-section .filter-btn:active::after {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+}
+
+/* Indicateur de compteur sur les boutons */
+.filter-section .filter-btn .count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+}
+
+.filter-section .filter-btn.active .count {
+    background: var(--primary-dark);
+    color: #FFFFFF;
+}
+
+/* Amélioration de la barre de recherche */
+.filter-section .filter-search {
+    position: relative;
+}
+
+.filter-section .filter-search input {
+    transition: all 0.3s ease;
+}
+
+.filter-section .filter-search input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2);
+}
+
+.filter-section .filter-search i {
+    transition: all 0.3s ease;
+}
+
+.filter-section .filter-search input:focus + i {
+    color: var(--accent-color);
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Message "Aucun résultat" */
+.no-results-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: #FFFFFF;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.no-results-message i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.no-results-message p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.no-results-message .btn-reset {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.no-results-message .btn-reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+}
+
+/* Amélioration de la grille pour les éléments filtrés */
+.gallery-main .gallery-grid {
+    min-height: 400px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Loading spinner pendant le filtrage */
+.gallery-grid.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--gray);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spinner 0.8s linear infinite;
+    z-index: 10;
+}
+
+@keyframes spinner {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.gallery-grid.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Override des styles existants qui pourraient interférer */
+.gallery-item[style*="display: none"] {
+    display: none !important;
+}
+
+/* Transition en douceur pour le redimensionnement de la grille */
+.gallery-grid {
+    transition: all 0.3s ease;
+}
+
+/* Animation des compteurs */
+.filter-btn .count {
+    animation: countPulse 0.3s ease;
+}
+
+@keyframes countPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/*---------------------------------
+-----REALISATION-----------------*/
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Section Réalisations */
+.realisations {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-titre {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section-titre::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+/* Grille des réalisations */
+.realisations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Carte de réalisation */
+.realisation-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.realisation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Conteneur d'image */
+.realisation-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.realisation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.realisation-card:hover .realisation-image img {
+    transform: scale(1.1);
+}
+
+/* Contenu texte */
+.realisation-content {
+    padding: 1.5rem;
+}
+
+.realisation-titre {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.realisation-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Media Queries pour différents écrans */
+
+/* Écrans moyens (tablettes) */
+@media (max-width: 992px) {
+    .realisations {
+        padding: 3rem 1.5rem;
+    }
+
+    .section-titre {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .realisations-grid {
+        gap: 1.5rem;
+    }
+
+    .realisation-image {
+        height: 220px;
+    }
+}
+
+/* Petits écrans (smartphones) */
+@media (max-width: 768px) {
+    .realisations {
+        padding: 2rem 1rem;
+    }
+
+    .section-titre {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .realisations-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .realisation-image {
+        height: 200px;
+    }
+
+    .realisation-content {
+        padding: 1.25rem;
+    }
+
+    .realisation-titre {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .realisation-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .realisations {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .section-titre {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .realisation-image {
+        height: 180px;
+    }
+
+    .realisation-content {
+        padding: 1rem;
+    }
+
+    .realisation-titre {
+        font-size: 1.1rem;
+    }
+
+    .realisation-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Grands écrans */
+@media (min-width: 1400px) {
+    .realisations {
+        max-width: 1400px;
+    }
+
+    .realisations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .realisation-image {
+        height: 280px;
+    }
+
+    .realisation-content {
+        padding: 2rem;
+    }
+
+    .realisation-titre {
+        font-size: 1.5rem;
+    }
+
+    .realisation-description {
+        font-size: 1rem;
+    }
+}
+
+/* Mode paysage sur mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+    .realisations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .realisation-image {
+        height: 180px;
+    }
+}
