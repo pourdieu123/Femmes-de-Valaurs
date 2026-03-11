@@ -377,3 +377,5 @@ document.addEventListener('DOMContentLoaded', function() {
         copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2025', currentYear);
     }
 });
+/*----------------------------------------
+----------------------------------------*/
