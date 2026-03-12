@@ -117,60 +117,56 @@ url('assets/images/contact.png') no-repeat ;
     <section class="contact-form-section">
         <div class="container">
             <div class="contact-grid">
-                <!-- Formulaire de contact -->
-                <div class="form-container">
-                    <h2 class="form-title">Envoyez-nous un message</h2>
-                  <form id="contactForm" class="contact-form" action="https://formspree.io/f/mwvrvwbw" method="POST"></form>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Nom  <span class="required">*</span></label>
-                                <input type="text"  name="name" placeholder="Votre nom" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Prénom(s) <span class="required">*</span></label>
-                                <input type="text"name="surname" placeholder="votre.email@exemple.com" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+229 XX XX XX XX">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Sujet <span class="required">*</span></label>
-                                <select id="subject" name="subject" required>
-                                    <option value="" disabled selected>Choisissez un sujet</option>
-                                    <option value="adhesion">Demande d'adhésion</option>
-                                    <option value="information">Demande d'information</option>
-                                    <option value="partenariat">Partenariat / Collaboration</option>
-                                    <option value="evenement">Participation à un événement</option>
-                                    <option value="soutien">Demande de soutien</option>
-                                    <option value="autre">Autre</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="message">Message <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
-                        </div>
-                        
-                        <div class="form-group consent">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="consent" required>
-                                <span>J'accepte que mes données soient traitées pour répondre à ma demande <span class="required">*</span></span>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary submit-btn">
-                            <i class="fas fa-paper-plane"></i> Envoyer le message
-                        </button>
-                        
-                        <div class="form-status" id="formStatus"></div>
-                    </form>
-                </div>
-                
+          <!-- Formulaire de contact -->
+<div class="form-container">
+    <h2 class="form-title">Envoyez-nous un message</h2>
+
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/mwvrvwbw" method="POST">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Nom <span class="required">*</span></label>
+                <input type="text" name="name" placeholder="HOUEGNISSODE" required>
+            </div>
+
+            <div class="form-group">
+                <label>Prénom(s) <span class="required">*</span></label>
+                <input type="text" name="surname" placeholder="Bidossèssi Ernesto Pour Dieu" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label>Téléphone</label>
+                <input type="tel" name="phone" placeholder="+229 0151285768">
+            </div>
+
+           
+        </div>
+
+        <div class="form-group full-width">
+            <label>Message <span class="required">*</span></label>
+            <textarea name="message" rows="6" placeholder="Votre message..." required></textarea>
+        </div>
+
+        <div class="form-group consent">
+            <label class="checkbox-label">
+                <input type="checkbox" name="consent" required>
+                <span>
+                    J'accepte que mes données soient traitées pour répondre à ma demande
+                    <span class="required">*</span>
+                </span>
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-btn">
+            <i class="fas fa-paper-plane"></i> Envoyer le message
+        </button>
+
+        <div class="form-status" id="formStatus"></div>
+
+    </form>
+</div>
                 <!-- Carte et informations complémentaires -->
                 <div class="map-container">
                     <div class="map-wrapper">
@@ -478,5 +474,264 @@ url('assets/images/contact.png') no-repeat ;
 
 
     <script src="script.js"></script>
+    <script>
+// Script spécifique pour la FAQ
+(function() {
+    'use strict';
+    
+    // Attendre que le DOM soit chargé
+    document.addEventListener('DOMContentLoaded', function() {
+        initFaq();
+    });
+    
+    function initFaq() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        if (faqItems.length === 0) {
+            console.log('Aucun élément FAQ trouvé');
+            return;
+        }
+        
+        console.log('Initialisation FAQ avec', faqItems.length, 'éléments');
+        
+        // D'abord, fermer toutes les réponses
+        faqItems.forEach(item => {
+            const answer = item.querySelector('.faq-answer');
+            const toggle = item.querySelector('.faq-toggle i');
+            
+            if (answer) {
+                answer.style.display = 'none';
+                answer.style.maxHeight = '0';
+                answer.style.opacity = '0';
+                answer.style.padding = '0 20px';
+            }
+            
+            if (toggle) {
+                toggle.className = 'fas fa-plus';
+            }
+            
+            item.classList.remove('active');
+        });
+        
+        // Ajouter les événements de clic
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const toggle = item.querySelector('.faq-toggle i');
+            
+            if (question && answer) {
+                // Supprimer les anciens écouteurs
+                question.replaceWith(question.cloneNode(true));
+                const newQuestion = item.querySelector('.faq-question');
+                
+                newQuestion.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isOpen = item.classList.contains('active');
+                    
+                    console.log('Question cliquée, ouverte ?', isOpen);
+                    
+                    // Fermer tous les autres
+                    faqItems.forEach(other => {
+                        if (other !== item && other.classList.contains('active')) {
+                            other.classList.remove('active');
+                            
+                            const otherAnswer = other.querySelector('.faq-answer');
+                            const otherToggle = other.querySelector('.faq-toggle i');
+                            
+                            if (otherAnswer) {
+                                otherAnswer.style.display = 'none';
+                                otherAnswer.style.maxHeight = '0';
+                                otherAnswer.style.opacity = '0';
+                                otherAnswer.style.padding = '0 20px';
+                            }
+                            
+                            if (otherToggle) {
+                                otherToggle.className = 'fas fa-plus';
+                            }
+                        }
+                    });
+                    
+                    // Ouvrir/fermer celui-ci
+                    if (!isOpen) {
+                        // Ouvrir
+                        item.classList.add('active');
+                        
+                        if (answer) {
+                            answer.style.display = 'block';
+                            // Forcer un reflow
+                            answer.offsetHeight;
+                            
+                            const height = answer.scrollHeight;
+                            answer.style.maxHeight = height + 'px';
+                            answer.style.opacity = '1';
+                            answer.style.padding = '20px';
+                        }
+                        
+                        if (toggle) {
+                            toggle.className = 'fas fa-minus';
+                        }
+                    } else {
+                        // Fermer
+                        item.classList.remove('active');
+                        
+                        if (answer) {
+                            answer.style.maxHeight = '0';
+                            answer.style.opacity = '0';
+                            answer.style.padding = '0 20px';
+                            
+                            setTimeout(() => {
+                                if (!item.classList.contains('active')) {
+                                    answer.style.display = 'none';
+                                }
+                            }, 300);
+                        }
+                        
+                        if (toggle) {
+                            toggle.className = 'fas fa-plus';
+                        }
+                    }
+                });
+            }
+        });
+        
+        // Ajouter les styles CSS nécessaires s'ils ne sont pas déjà présents
+        addFaqStyles();
+    }
+    
+    function addFaqStyles() {
+        // Vérifier si les styles existent déjà
+        if (document.getElementById('faq-styles')) return;
+        
+        const style = document.createElement('style');
+        style.id = 'faq-styles';
+        style.textContent = `
+            /* Styles pour la FAQ */
+            .faq-item {
+                background: #fff;
+                border-radius: 10px;
+                margin-bottom: 15px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                transition: all 0.3s ease;
+            }
+            
+            .faq-question {
+                padding: 20px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #fff;
+                transition: background 0.3s ease;
+                user-select: none;
+            }
+            
+            .faq-question:hover {
+                background: #f9f9f9;
+            }
+            
+            .faq-question h3 {
+                margin: 0;
+                font-size: 1.1rem;
+                color: #333;
+                font-weight: 600;
+                flex: 1;
+                padding-right: 20px;
+            }
+            
+            .faq-toggle {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--primary-color, #c59a6b);
+                color: white;
+                border-radius: 50%;
+                transition: all 0.3s ease;
+            }
+            
+            .faq-item.active .faq-toggle {
+                background: #333;
+                transform: rotate(180deg);
+            }
+            
+            .faq-answer {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                padding: 0 20px;
+                background: #f9f9f9;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                line-height: 1.6;
+            }
+            
+            .faq-item.active .faq-answer {
+                opacity: 1;
+                padding: 20px;
+            }
+            
+            .faq-answer p {
+                margin: 0 0 15px 0;
+                color: #555;
+            }
+            
+            .faq-answer p:last-child {
+                margin-bottom: 0;
+            }
+            
+            .faq-answer ul {
+                margin: 10px 0 0 0;
+                padding-left: 20px;
+            }
+            
+            .faq-answer li {
+                margin-bottom: 8px;
+                color: #555;
+            }
+            
+            .faq-answer li:last-child {
+                margin-bottom: 0;
+            }
+            
+            .faq-answer strong {
+                color: var(--primary-color, #c59a6b);
+            }
+        `;
+        
+        document.head.appendChild(style);
+        console.log('Styles FAQ ajoutés');
+    }
+})();
+</script>
+<script>
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
+
+form.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    if (response.ok) {
+        status.innerHTML = "✅ Message envoyé avec succès !";
+        form.reset();
+    } else {
+        status.innerHTML = "❌ Une erreur est survenue. Réessayez.";
+    }
+
+});
+</script>
 </body>
 </html>
