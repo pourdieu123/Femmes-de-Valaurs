@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Femme de Valeur International - Projets En Cours</title>
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -10,6 +10,281 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/images/logo-fvi.png">
+    <style>
+        /* Styles pour les modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 700px;
+            position: relative;
+            animation: modalopen 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 25px;
+            top: 15px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 1010;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .close-modal:hover {
+            color: #8B5A2B; /* Marron pour le hover */
+        }
+        
+        .modal-title {
+            font-size: 28px;
+            color: #8B5A2B; /* Remplacé par marron */
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .modal-subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .modal-details {
+            margin: 20px 0;
+        }
+        
+        .modal-detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+        
+        .modal-detail-icon {
+            min-width: 40px;
+            height: 40px;
+            background: #f8f0ef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8B5A2B; /* Remplacé par marron */
+            font-size: 18px;
+        }
+        
+        .modal-detail-text {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .modal-detail-text strong {
+            color: #8B5A2B; /* Remplacé par marron */
+        }
+        
+        .modal-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .modal-list li {
+            background: #f9f9f9;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #555;
+            border-left: 3px solid #8B5A2B; /* Remplacé par marron */
+        }
+        
+        .modal-budget {
+            background: linear-gradient(135deg, #8B5A2B 0%, #A9714B 100%); /* Remplacé par marron */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .modal-footer {
+            margin-top: 25px;
+            text-align: right;
+        }
+        
+        .modal-btn {
+            background: #8B5A2B; /* Remplacé par marron */
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .modal-btn:hover {
+            background: #5D3A1A; /* Marron plus foncé */
+        }
+        
+        /* Styles pour les cartes projets */
+        .realisations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .realisation-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .realisation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(139, 90, 43, 0.15); /* Ombre marron */
+            border-color: #8B5A2B; /* Marron */
+        }
+        
+        .project-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: #f8f0ef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #8B5A2B; /* Marron */
+            transition: all 0.3s;
+        }
+        
+        .realisation-card:hover .project-icon {
+            background: #8B5A2B; /* Marron */
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .realisation-titre {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .realisation-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .project-badge {
+            display: inline-block;
+            background: #8B5A2B; /* Marron */
+            color: white;
+            font-size: 12px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 10% auto;
+            }
+            
+            .modal-title {
+                font-size: 24px;
+                padding-right: 40px;
+            }
+            
+            .modal-detail-item {
+                gap: 10px;
+            }
+            
+            .modal-detail-icon {
+                min-width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+            
+            .modal-detail-text {
+                font-size: 14px;
+            }
+            
+            .close-modal {
+                right: 15px;
+                top: 15px;
+                width: 35px;
+                height: 35px;
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .modal-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 32px;
+            }
+            
+            .realisation-titre {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header / Navigation -->
@@ -73,70 +348,34 @@
         <section class="realisations">
         
         <div class="realisations-grid">
-            <!-- Réalisation 1 -->
-            <div class="realisation-card">
-                <div class="realisation-image">
-                    <img src="https://via.placeholder.com/400x300" alt="Projet 1">
+            <!-- Projet 1 - Conférences -->
+            <div class="realisation-card" data-modal="modal1">
+                <div class="project-icon">
+                    <i class="fas fa-users"></i>
                 </div>
-                <div class="realisation-content">
-                    <h3 class="realisation-titre">Rénovation Appartement</h3>
-                    <p class="realisation-description">Rénovation complète d'un appartement haussmannien de 80m² avec création d'espaces modernes.</p>
-                </div>
+                <h3 class="realisation-titre">Conférences pour femmes</h3>
+                <p class="realisation-description">Deux conférences pour accueillir 50 femmes à Porto-Novo/Bohicon et Tchaourou</p>
+                <span class="project-badge">2 conférences</span>
             </div>
 
-            <!-- Réalisation 2 -->
-            <div class="realisation-card">
-                <div class="realisation-image">
-                    <img src="https://via.placeholder.com/400x300" alt="Projet 2">
+            <!-- Projet 2 - Formations professionnelles -->
+            <div class="realisation-card" data-modal="modal2">
+                <div class="project-icon">
+                    <i class="fas fa-laptop"></i>
                 </div>
-                <div class="realisation-content">
-                    <h3 class="realisation-titre">Terrasse Bois</h3>
-                    <p class="realisation-description">Construction d'une terrasse en bois exotique de 35m² avec éclairage intégré.</p>
-                </div>
+                <h3 class="realisation-titre">Formations professionnelles</h3>
+                <p class="realisation-description">8 métiers manuels et compétences modernes pour l'autonomie des femmes</p>
+                <span class="project-badge">8 formations</span>
             </div>
 
-            <!-- Réalisation 3 -->
-            <div class="realisation-card">
-                <div class="realisation-image">
-                    <img src="https://via.placeholder.com/400x300" alt="Projet 3">
+            <!-- Projet 3 - Financement entreprises -->
+            <div class="realisation-card" data-modal="modal3">
+                <div class="project-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
                 </div>
-                <div class="realisation-content">
-                    <h3 class="realisation-titre">Cuisine Moderne</h3>
-                    <p class="realisation-description">Installation d'une cuisine entièrement équipée avec îlot central et matériaux haut de gamme.</p>
-                </div>
-            </div>
-
-            <!-- Réalisation 4 -->
-            <div class="realisation-card">
-                <div class="realisation-image">
-                    <img src="https://via.placeholder.com/400x300" alt="Projet 4">
-                </div>
-                <div class="realisation-content">
-                    <h3 class="realisation-titre">Salle de Bain</h3>
-                    <p class="realisation-description">Rénovation complète d'une salle de bain avec douche à l'italienne et rangements sur mesure.</p>
-                </div>
-            </div>
-
-            <!-- Réalisation 5 -->
-            <div class="realisation-card">
-                <div class="realisation-image">
-                    <img src="https://via.placeholder.com/400x300" alt="Projet 5">
-                </div>
-                <div class="realisation-content">
-                    <h3 class="realisation-titre">Extension Maison</h3>
-                    <p class="realisation-description">Extension de 25m² avec baies vitrées et toit terrasse végétalisé.</p>
-                </div>
-            </div>
-
-            <!-- Réalisation 6 -->
-            <div class="realisation-card">
-                <div class="realisation-image">
-                    <img src="https://via.placeholder.com/400x300" alt="Projet 6">
-                </div>
-                <div class="realisation-content">
-                    <h3 class="realisation-titre">Aménagement Bureau</h3>
-                    <p class="realisation-description">Création d'un espace de travail ergonomique avec mobilier sur mesure et isolation phonique.</p>
-                </div>
+                <h3 class="realisation-titre">Financement petites entreprises</h3>
+                <p class="realisation-description">Bourses pour créer une petite entreprise</p>
+                <span class="project-badge">100 femmes</span>
             </div>
         </div>
     </section> <!-- Barre de progression globale -->
@@ -147,11 +386,11 @@
                     <h4>Progression globale</h4>
                     <div class="global-progress">
                         <div class="progress-bar large">
-                            <div class="progress-fill" style="width: 62%"></div>
+                            <div class="progress-fill" style="width: 30%"></div>
                         </div>
-                        <span class="global-percent">62%</span>
+                        <span class="global-percent">30%</span>
                     </div>
-                    <p>3 projets actifs · 125 bénéficiaires directes</p>
+                    <p>2 projets en cours  · 50 bénéficiaires prévues</p>
                 </div>
             </div>
             <a href="formulaire.html" class="btn-support">
@@ -161,6 +400,163 @@
         </div>
     </div>
 </section>
+
+<!-- Modale 1 - Conférences -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" data-close>&times;</span>
+        <h2 class="modal-title">Conférences pour femmes</h2>
+        <p class="modal-subtitle">Un programme d'autonomisation à travers des rencontres inspirantes</p>
+        
+        <div class="modal-details">
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Lieux :</strong> Première conférence à Porto-Novo ou Bohicon · Deuxième conférence à Tchaourou
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-female"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Bénéficiaires :</strong> 50 femmes par conférence, avec une attention particulière pour les veuves
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-gift"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Activités :</strong> Offre de cadeaux aux veuves, formations professionnelles gratuites
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-truck"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Logistique :</strong> Transport, hébergement et logistique pris en charge pour faciliter la participation
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a href="formulaire.html" class="modal-btn">Soutenir ce projet</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modale 2 - Formations professionnelles -->
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" data-close>&times;</span>
+        <h2 class="modal-title">Formations professionnelles</h2>
+        <p class="modal-subtitle">Des métiers manuels pour un revenu quotidien</p>
+        
+        <div class="modal-details">
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-tshirt"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Couture :</strong> Apprentissage de la confection et retouche
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-cut"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Coiffure et esthétique :</strong> Confection de perruques et maquillage artistique
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-utensils"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Traiteur :</strong> Pâtisserie et arts culinaires
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-paint-brush"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Artisanat :</strong> Perlage, crochet, tricot
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-palette"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Art textile :</strong> Teinture de tissus, création de bijoux artisanaux
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Compétences modernes :</strong> Marketing digital, graphisme, montage vidéo, gestion des réseaux sociaux
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-wine-bottle"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Fabrication de boissons :</strong> Bisap, noix tigrées, gingembre, yaourt
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-soap"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Fabrication de savons :</strong> Savons liquides et solides
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a href="formulaire.html" class="modal-btn">Soutenir ce projet</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modale 3 - Financement entreprises -->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" data-close>&times;</span>
+        <h2 class="modal-title">Financement pour petites entreprises</h2>
+        <p class="modal-subtitle">Des bourses pour créer et développer son activité</p>
+        
+        <div class="modal-details">
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-coins"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Bourse individuelle :</strong> Aide financière pour le démarrage
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-users"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Nombre de bénéficiaires :</strong> Une centaine de femmes accompagnées
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-chart-pie"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Accompagnement :</strong> Suivi personnalisé pour la création d'entreprise
+                </div>
+            </div>
+            
+            <div class="modal-detail-item">
+                <div class="modal-detail-icon"><i class="fas fa-bus"></i></div>
+                <div class="modal-detail-text">
+                    <strong>Logistique :</strong> Transport et hébergement inclus pour les participantes
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a href="formulaire.html" class="modal-btn">Soutenir ce projet</a>
+        </div>
+    </div>
+</div>
 
  <!-- Footer -->
     <footer class="footer">
@@ -231,6 +627,69 @@
         </div>
     </footer>
 
+    <script>
+        (function() {
+            // GESTION FIABLE DES MODALES
+            const modals = document.querySelectorAll('.modal');
+            const cards = document.querySelectorAll('.realisation-card[data-modal]');
+            
+            // Ouvrir modale
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const modalId = this.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            // Fermer avec le bouton X (data-close)
+            document.querySelectorAll('[data-close]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Fermer en cliquant sur l'overlay (fond sombre)
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Fermer avec la touche Echap
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        if (modal.style.display === 'block') {
+                            modal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                }
+            });
+            
+            // Empêcher la fermeture quand on clique à l'intérieur de la modale
+            document.querySelectorAll('.modal-content').forEach(content => {
+                content.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+        })();
+    </script>
 
     <script src="script.js"></script>
 </body>
