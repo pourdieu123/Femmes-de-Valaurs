@@ -481,6 +481,290 @@
         padding: 40px;
         color: #666;
     }
+    /* ===== SECTION RÉALISATIONS ENTIÈREMENT RESPONSIVE ===== */
+
+/* Conteneur principal */
+.projects-current {
+    width: 100%;
+    padding: 60px 0;
+}
+
+/* En-tête de section */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: #2d3748;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(80px, 20%);
+    height: 4px;
+    background: #b8860b;
+}
+
+.section-subtitle {
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Grille des cartes - responsive */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tablettes */
+@media screen and (max-width: 992px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 15px;
+    }
+}
+
+/* Mobiles */
+@media screen and (max-width: 576px) {
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+}
+
+/* Grands écrans */
+@media screen and (min-width: 1400px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Cartes */
+.card {
+    background: white;
+    padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-bottom: 20px;
+    color: #2d3748;
+    line-height: 1.4;
+}
+
+.card p {
+    margin: 10px 0;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+}
+
+.card p:first-of-type {
+    font-weight: 600;
+    color: #b8860b;
+}
+
+.card p:last-of-type {
+    color: #718096;
+    background: #f7fafc;
+    padding: 8px 15px;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 15px auto 0;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+}
+
+/* Badges */
+.card[data-status="upcoming"]::after {
+    content: 'À venir';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #b8860b;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: clamp(0.7rem, 2vw, 0.8rem);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.card .photo-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #b8860b;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: clamp(0.65rem, 2vw, 0.75rem);
+    white-space: nowrap;
+}
+
+/* Stats section responsive */
+.projects-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: clamp(20px, 5vw, 30px);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin: 40px 20px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 4vw, 20px);
+    flex-wrap: wrap;
+}
+
+.stat-icon {
+    width: clamp(40px, 8vw, 50px);
+    height: clamp(40px, 8vw, 50px);
+    background: #fef6e6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+.stat-detail h4 {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 10px;
+}
+
+.global-progress {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.progress-bar {
+    width: min(250px, 60vw);
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #b8860b;
+}
+
+.btn-support {
+    background: #b8860b;
+    color: white;
+    padding: clamp(10px, 3vw, 12px) clamp(20px, 5vw, 30px);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    white-space: nowrap;
+}
+
+.btn-support:hover {
+    background: #9e7409;
+}
+
+/* Responsive pour les stats */
+@media screen and (max-width: 768px) {
+    .projects-stats {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .global-progress {
+        justify-content: center;
+    }
+    
+    .progress-bar {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .btn-support {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Ajustements pour très petits écrans */
+@media screen and (max-width: 380px) {
+    .card {
+        padding: 20px 15px;
+    }
+    
+    .card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card p {
+        font-size: 0.9rem;
+    }
+    
+    .card[data-status="upcoming"]::after,
+    .card .photo-badge {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+    }
+}
+
+/* Optimisation pour les écrans tactiles */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover {
+        transform: none;
+    }
+    
+    .card:active {
+        transform: translateY(-5px);
+    }
+}
 </style>
 
 <body>
@@ -686,89 +970,56 @@
     </footer>
 
     <script>
-        // ===== LISTE COMPLÈTE DE TOUTES LES PHOTOS =====
-        // Vous n'avez plus qu'à mettre vos images dans les dossiers correspondants
+    // ===== LISTE COMPLÈTE DE TOUTES LES PHOTOS =====
+    const photosData = {
+        // Conférence Cotonou Juillet 2024 - 9 photos
+        'cotonou-2024': {
+            title: 'Conférence de Cotonou',
+            date: 'Juillet 2024',
+            lieu: 'Cotonou',
+            photos: Array(9).fill().map((_, i) => ({
+                url: `assets/images/conferences/cotonou-2024/photo${i+1}.jpeg`,
+                caption: `Cotonou 2024 - Photo ${i+1}`
+            }))
+        },
         
-        const photosData = {
-            // Conférence Cotonou Juillet 2024 - 9 photos
-            'cotonou-2024': {
-                title: 'Conférence de Cotonou',
-                date: 'Juillet 2024',
-                lieu: 'Cotonou',
-                photos: [
-                    { url: 'assets/images/conferences/cotonou-2024/photo1.jpeg', caption: 'Cotonou 2024' },
-                    { url: 'assets/images/conferences/cotonou-2024/photo2.jpeg', caption: 'Cotonou 2024' },
-                    { url: 'assets/images/conferences/cotonou-2024/photo3.jpeg', caption: 'Cotonou 2024' },
-                    { url: 'assets/images/conferences/cotonou-2024/photo4.jpeg', caption: 'Cotonou 2024' },
-                    { url: 'assets/images/conferences/cotonou-2024/photo5.jpeg', caption: 'Cotonou 2024' },
-                    { url: 'assets/images/conferences/cotonou-2024/photo6.jpeg', caption: 'Cotonou 2024' },
-                    { url: 'assets/images/conferences/cotonou-2024/photo7.jpeg', caption: 'Cotonou 2024' },
-                    { url: 'assets/images/conferences/cotonou-2024/photo8.jpeg', caption: 'Cotonou 2024' },
-                    { url: 'assets/images/conferences/cotonou-2024/photo9.jpeg', caption: ' Cotonou 2024' }
-                ]
-            },
-            
-            // Conférence Parakou Octobre 2024 - 12 photos
-            'parakou-2024': {
-                title: 'Conférence de Parakou',
-                date: 'Octobre 2024',
-                lieu: 'Parakou',
-                photos: [
-                    { url: 'assets/images/conferences/parakou-2024/photo1.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo2.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo3.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo4.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo5.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo6.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo7.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo8.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo9.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo10.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo11.jpeg', caption: 'Parakou 2024' },
-                    { url: 'assets/images/conferences/parakou-2024/photo12.jpeg', caption: 'Parakou 2024' }
-                ]
-            },
-            
-            // Conférence Godomey Juillet 2025 - 9 photos (à venir)
-            'godomey-2025': {
-                title: 'Conférence de Godomey',
-                date: 'Juillet 2025',
-                lieu: 'Godomey',
-                photos: [
-                    { url: 'assets/images/conferences/godomey-2025/photo1.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo2.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo3.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo4.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo5.jpeg', caption: 'Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo6.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo7.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo8.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo9.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo10.jpeg', caption: ' Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo11.jpeg', caption: 'Godomey 2025' },
-                    { url: 'assets/images/conferences/godomey-2025/photo12.jpeg', caption: ' Godomey 2025' },
-                ]
-            },
-            
-            // Conférence Porto-Novo Août 2025 - 9 photos (à venir)
-            'portonovo-2025': {
-                title: 'Conférence de Porto-Novo',
-                date: 'Août 2025',
-                lieu: 'Porto-Novo',
-                photos: [
-                    { url: 'assets/images/conferences/portonovo-2025/photo1.jpeg', caption: ' Porto-Novo 2025' },
-                    { url: 'assets/images/conferences/portonovo-2025/photo2.jpeg', caption: ' Porto-Novo 2025' },
-                    { url: 'assets/images/conferences/portonovo-2025/photo3.jpeg', caption: ' Porto-Novo 2025' },
-                    { url: 'assets/images/conferences/portonovo-2025/photo4.jpeg', caption: ' Porto-Novo 2025' },
-                    { url: 'assets/images/conferences/portonovo-2025/photo5.jpeg', caption: 'Porto-Novo 2025' },
-                    { url: 'assets/images/conferences/portonovo-2025/photo6.jpeg', caption: 'Porto-Novo 2025' }
-                ]
-            }
-        };
+        // Conférence Parakou Octobre 2024 - 12 photos
+        'parakou-2024': {
+            title: 'Conférence de Parakou',
+            date: 'Octobre 2024',
+            lieu: 'Parakou',
+            photos: Array(12).fill().map((_, i) => ({
+                url: `assets/images/conferences/parakou-2024/photo${i+1}.jpeg`,
+                caption: `Parakou 2024 - Photo ${i+1}`
+            }))
+        },
+        
+        // Conférence Godomey Juillet 2025 - 9 photos
+        'godomey-2025': {
+            title: 'Conférence de Godomey',
+            date: 'Juillet 2025',
+            lieu: 'Godomey',
+            photos: Array(9).fill().map((_, i) => ({
+                url: `assets/images/conferences/godomey-2025/photo${i+1}.jpeg`,
+                caption: `Godomey 2025 - Photo ${i+1}`
+            }))
+        },
+        
+        // Conférence Porto-Novo Août 2025 - 9 photos
+        'portonovo-2025': {
+            title: 'Conférence de Porto-Novo',
+            date: 'Août 2025',
+            lieu: 'Porto-Novo',
+            photos: Array(9).fill().map((_, i) => ({
+                url: `assets/images/conferences/portonovo-2025/photo${i+1}.jpeg`,
+                caption: `Porto-Novo 2025 - Photo ${i+1}`
+            }))
+        }
+    };
 
-        // ===== CODE POUR LA MODALE ET LA LIGHTBOX =====
-        // (Ne plus rien toucher ici)
-        
+    // ===== CODE POUR LA MODALE ET LA LIGHTBOX =====
+    // Attendre que le DOM soit complètement chargé
+    document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('photoModal');
         const lightbox = document.getElementById('lightbox');
         const modalTitle = document.getElementById('modalTitle');
@@ -784,59 +1035,83 @@
         let currentPhotos = [];
         let currentIndex = 0;
 
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                const id = this.dataset.id;
-                
-                if (photosData[id]) {
-                    const data = photosData[id];
-                    modalTitle.textContent = data.title;
-                    modalSubtitle.textContent = `${data.lieu} - ${data.date}`;
+        // Vérifier que les éléments existent avant d'ajouter les events
+        if (document.querySelectorAll('.card').length > 0) {
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Empêcher la propagation pour ne pas bloquer le dropdown
+                    e.stopPropagation();
                     
-                    modalPhotos.innerHTML = data.photos.map((photo, index) => `
-                        <div class="modal-photo" data-index="${index}">
-                            <img src="${photo.url}" alt="${photo.caption}" loading="lazy">
-                            <div class="caption">${photo.caption}</div>
-                        </div>
-                    `).join('');
+                    const id = this.dataset.id;
                     
-                    document.querySelectorAll('.modal-photo').forEach(photoEl => {
-                        photoEl.addEventListener('click', function() {
-                            const index = parseInt(this.dataset.index);
-                            currentPhotos = data.photos;
-                            currentIndex = index;
-                            lightboxImg.src = currentPhotos[currentIndex].url;
-                            lightboxCaption.textContent = currentPhotos[currentIndex].caption;
-                            lightbox.classList.add('active');
+                    if (photosData[id]) {
+                        const data = photosData[id];
+                        modalTitle.textContent = data.title;
+                        modalSubtitle.textContent = `${data.lieu} - ${data.date}`;
+                        
+                        modalPhotos.innerHTML = data.photos.map((photo, index) => `
+                            <div class="modal-photo" data-index="${index}">
+                                <img src="${photo.url}" alt="${photo.caption}" loading="lazy">
+                                <div class="caption">${photo.caption}</div>
+                            </div>
+                        `).join('');
+                        
+                        document.querySelectorAll('.modal-photo').forEach(photoEl => {
+                            photoEl.addEventListener('click', function(e) {
+                                e.stopPropagation();
+                                const index = parseInt(this.dataset.index);
+                                currentPhotos = data.photos;
+                                currentIndex = index;
+                                lightboxImg.src = currentPhotos[currentIndex].url;
+                                lightboxCaption.textContent = currentPhotos[currentIndex].caption;
+                                lightbox.classList.add('active');
+                            });
                         });
-                    });
-                    
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
+                        
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+        }
+
+        // Fermetures avec vérification
+        if (closeModal) {
+            closeModal.onclick = (e) => {
+                e.stopPropagation();
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+        }
+
+        if (lightboxClose) {
+            lightboxClose.onclick = (e) => {
+                e.stopPropagation();
+                lightbox.classList.remove('active');
+            };
+        }
+
+        if (lightboxPrev) {
+            lightboxPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentPhotos.length > 0) {
+                    currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
+                    lightboxImg.src = currentPhotos[currentIndex].url;
+                    lightboxCaption.textContent = currentPhotos[currentIndex].caption;
                 }
             });
-        });
+        }
 
-        closeModal.onclick = () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        };
-
-        lightboxClose.onclick = () => {
-            lightbox.classList.remove('active');
-        };
-
-        lightboxPrev.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
-            lightboxImg.src = currentPhotos[currentIndex].url;
-            lightboxCaption.textContent = currentPhotos[currentIndex].caption;
-        });
-
-        lightboxNext.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % currentPhotos.length;
-            lightboxImg.src = currentPhotos[currentIndex].url;
-            lightboxCaption.textContent = currentPhotos[currentIndex].caption;
-        });
+        if (lightboxNext) {
+            lightboxNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentPhotos.length > 0) {
+                    currentIndex = (currentIndex + 1) % currentPhotos.length;
+                    lightboxImg.src = currentPhotos[currentIndex].url;
+                    lightboxCaption.textContent = currentPhotos[currentIndex].caption;
+                }
+            });
+        }
 
         window.onclick = (e) => {
             if (e.target === modal) {
@@ -856,14 +1131,16 @@
             }
             if (lightbox.classList.contains('active')) {
                 if (e.key === 'ArrowLeft') {
-                    lightboxPrev.click();
+                    e.preventDefault();
+                    if (lightboxPrev) lightboxPrev.click();
                 } else if (e.key === 'ArrowRight') {
-                    lightboxNext.click();
+                    e.preventDefault();
+                    if (lightboxNext) lightboxNext.click();
                 }
             }
         });
-    </script>
-
+    });
+</script>
     <script src="script.js"></script>
 </body>
 </html>
